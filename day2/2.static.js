@@ -9,7 +9,7 @@ function serve(req,res){
     // err 如果文件读取失败，会把原因放在err对象里
     // data 如果读取成功了，会把文件的内容放在data对象里
     fs.readFile('index.html',function(err,data){
-        res.writeHead(200,{'Content-Type':'text/html'})
+        res.writeHead(404,{'Content-Type':'text/html'})
         res.end(data);
     })
 }

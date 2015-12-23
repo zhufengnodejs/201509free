@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html5+node无刷新上传</title>
+    <link rel="stylesheet" href="/bootstrap.css">
+</head>
+<body class="container">
+<input type="file" name="avatar" id="avatar" class="form-control">
+<button class="btn btn-default" id="uploadBtn">上传</button>
+</body>
+<script src="uploader.js"></script>
+<script>
+    document.querySelector('#uploadBtn').addEventListener('click',function(event){
+        uploader({
+            id:'avatar',
+            url:'/upload'
+        });
+    })
+</script>
+</html>
