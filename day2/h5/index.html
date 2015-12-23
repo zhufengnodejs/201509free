@@ -15,6 +15,16 @@
         uploader({
             id:'avatar',
             url:'/upload'
+        }).then(function(result){
+            //成功
+            var result = JSON.parse(result);
+            var msg = result.msg;
+            var img = document.createElement('img');
+            img.src = msg;
+            img.className = 'img-responsive';
+            document.body.appendChild(img);
+        },function(reason){
+            alert(reason);
         });
     })
 </script>
