@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function Person(){
+
+    }
+    function random(){
+        var p = new Person();
+        return function(){
+            console.log('a');
+        }
+
+    }
+    var r1 = random();
+    var r2 = random();
+    //产生过几个上下文对象
+    r1();
+    r2();
+
+</script>
+</html>
