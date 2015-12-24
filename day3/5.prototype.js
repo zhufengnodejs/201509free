@@ -19,7 +19,7 @@ Parent.prototype.say = function(){
     console.log('say');
 }
 function Child(){
-
+  this.name = 'zfpx';
 }
 
 //原型赋值 子类扩展会修改父类
@@ -33,7 +33,7 @@ Child.prototype.play = function(){
     console.log('play');
 }*/
 //
-
+//child->
 Child.prototype = Object.create(Parent.prototype);
 Child.prototype.constructor = Child;
 Child.prototype.play = function(){
@@ -43,3 +43,12 @@ Child.prototype.play = function(){
 var child = new Child();
 child.say();
 child.play();
+///
+console.log('============');
+for(var attr in child){
+    if(child.hasOwnProperty(attr))
+    console.log(attr);
+}
+console.log(child.__proto__ instanceof Child);
+console.log(child.__proto__ instanceof Parent);
+console.log(child.__proto__.__proto__.__proto__);
